@@ -1,13 +1,11 @@
 Package: contractsearch
-Title: Searches Contract Registries for Homecare Providers
+Title: What the Package Does (One Line, Title Case)
 Version: 0.0.0.9000
 Authors@R: 
-    person("Bo", "Jacobs Strom", , "bo.jacobsstrom@sciencespo.fr")
-Description: Filters dataframes to those entries which likely contain homecare providers using dplyr and stringr.
+    person("Bo", "Jacobs Strom", , "bo.jacobsstrom@sciencespo.f", role = c("aut", "cre"),
+           comment = c(ORCID = "YOUR-ORCID-ID"))
+Description: What the package does (one paragraph).
 License: MIT + file LICENSE
 Encoding: UTF-8
 Roxygen: list(markdown = TRUE)
 RoxygenNote: 7.2.3
-Imports: 
-    dplyr,
-    stringr
