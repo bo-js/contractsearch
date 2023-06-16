@@ -9,6 +9,7 @@
 #'
 #' @examples
 
+
 homecare <- function(x, col1 = Title, col2 = Description){
   x %>%
     filter(str_detect(col1, "Home") | str_detect(col1, "home") |
