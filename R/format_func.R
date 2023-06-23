@@ -9,7 +9,7 @@
 #' @param rev is the review date variable
 #' @param frame is the framework type variable
 #' @param sup is the supplier name variable
-#' @param council is the council variable
+#' @param coun is the council variable
 #'
 #' @return a dataframe
 #' @export

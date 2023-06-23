@@ -14,7 +14,7 @@ con_format(
   rev = "Review.Date",
   frame = "Framework.Type",
   sup = "Supplier",
-  council = "Council"
+  coun = "Council"
 )
 }
 \arguments{
@@ -36,7 +36,7 @@ con_format(
 
 \item{sup}{is the supplier name variable}
 
-\item{council}{is the council variable}
+\item{coun}{is the council variable}
 }
 \value{
 a dataframe
