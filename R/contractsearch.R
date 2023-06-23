@@ -1,24 +1,22 @@
-#' Title
+#' home care only search, intended to be piped after all-care search
 #'
 #' @param x is the dataframe used
-#' @param col1 is the first column to be searched
-#' @param col2 is the second column to be searched
+#' @param c1 is the first column to be searched
+#' @param c2 is the second column to be searched
 #'
-#' @return
+#' @return A dataframe
 #' @export
 #'
 #' @examples
 
-homecare <- function(x, col1 = Title, col2 = Description){
+home <- function(x, c1 = "Title", c2 = "Description"){
   x %>%
-    filter(str_detect(col1, "Home") | str_detect(col1, "home") |
-             str_detect(col2, "Home") | str_detect(col2, "home") |
-             str_detect(col1, "Domiciliary") | str_detect(col1, "domiciliary")|
-             str_detect(col2, "Domiciliary") | str_detect(col2, "domiciliary"))%>%
-    filter(str_detect(col1, "care") | str_detect(col1, "Care")|
-             str_detect(col2, "care") | str_detect(col2, "Care"))%>%
-    filter(str_detect(col1, "Care Home", negate = TRUE) &
-             str_detect(col1, "care home", negate = TRUE))%>%
-    filter(str_detect(col2, "Care Home", negate = TRUE) &
-             str_detect(col2, "care home", negate = TRUE))
+    dplyr::filter(stringr::str_detect(get(c1), "Home") | stringr::str_detect(get(c1), "home") |
+             stringr::str_detect(get(c2), "Home") | stringr::str_detect(get(c2), "home") |
+             stringr::str_detect(get(c1), "Domiciliary") | stringr::str_detect(get(c1), "domiciliary")|
+             stringr::str_detect(get(c2), "Domiciliary") | stringr::str_detect(get(c2), "domiciliary"))%>%
+    dplyr::filter(stringr::str_detect(get(c1), "Care Home", negate = TRUE) &
+             stringr::str_detect(get(c1), "care home", negate = TRUE))%>%
+    dplyr::filter(stringr::str_detect(get(c2), "Care Home", negate = TRUE) &
+             stringr::str_detect(get(c2), "care home", negate = TRUE))
 }
