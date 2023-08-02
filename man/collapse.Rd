@@ -4,16 +4,16 @@
 \alias{collapse}
 \title{Collapse Dates}
 \usage{
-collapse(x, sup = "supplier_clean", start_y = "start_y", end_y = "end_y")
+collapse(x, sup = "supplier_clean", .start = "start_y", .end = "end_y")
 }
 \arguments{
 \item{x}{is the dataset to be collapsed}
 
 \item{sup}{is the name of the supplier}
 
-\item{start_y}{is the variable containing the start year}
+\item{.start}{is the variable containing the start year}
 
-\item{end_y}{is the variable containing the end year}
+\item{.end}{is the variable containing the end year}
 }
 \description{
 Collapse Dates

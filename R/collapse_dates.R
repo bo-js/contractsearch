@@ -2,21 +2,21 @@
 #'
 #' @param x is the dataset to be collapsed
 #' @param sup is the name of the supplier
-#' @param start_y is the variable containing the start year
-#' @param end_y is the variable containing the end year
+#' @param .start is the variable containing the start year
+#' @param .end is the variable containing the end year
 #'
 #' @return
 #' @export
-#'
+#' @import dplyr
 #' @examples
 
-collapse <- function(x, sup = "supplier_clean", start_y = "start_y", end_y = "end_y") {
+collapse <- function(x, sup = "supplier_clean", .start = "start_y", .end = "end_y") {
   x %>%
-    dplyr::arrange(get(sup), get(start_y)) %>%
-    dplyr::group_by(get(sup)) %>%
-    dplyr::mutate(indx = c(0, cumsum(as.numeric(dplyr::lead(get(start_y))) >
-                                       cummax(as.numeric(get(end_y))))[-dplyr::n()])) %>%
-    dplyr::group_by(get(supplier_clean), indx) %>%
-    dplyr::summarise(start = dplyr::first(get(start_y)), end = dplyr::last(get(end_y)))%>%
-    dplyr::select(-indx)
+    arrange(get(sup), get(.start)) %>%
+    group_by(get(sup)) %>%
+    mutate(indx = c(0, cumsum(as.numeric(lead(get(.start))) >
+                                cummax(as.numeric(get(.end))))[-n()])) %>%
+    group_by(supplier_clean, indx) %>%
+    summarise(start = first(get(.start)), end = last(get(.end)))%>%
+    select(-indx)
 }
