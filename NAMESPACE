@@ -2,6 +2,7 @@
 
 export("%>%")
 export(care)
+export(collapse)
 export(con_format)
 export(home)
 export(res)
