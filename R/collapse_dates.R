@@ -18,6 +18,5 @@ collapse <- function(x, sup = "supplier_clean", .start = "start_y", .end = "end_
                                 cummax(as.numeric(get(.end))))[-n()])) %>%
     group_by(get(sup), indx) %>%
     summarise(start = first(get(.start)), end = last(get(.end)))%>%
-    rename(get(sup) = `get(sup)`)%>%
     select(-indx)
 }
